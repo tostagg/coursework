@@ -1,0 +1,57 @@
+@charset "UTF-8";
+
+img{
+
+    width: 300px;
+    height: 200px;
+
+}
+
+.prato{
+
+    width: 350px;
+    height: 250px;
+
+}
+
+#fotoprato{
+
+    width: 350px;
+    height: 250px;
+
+}
+
+body{
+    background-color: #fcf3cf;
+}
+
+input[type=submit]{
+    background-color: green;
+    color: white;
+    padding: 8px;
+    border: none;
+}
+
+input[type=reset]{
+    background-color: red;
+    color: white;
+    padding: 8px;
+    border: none;
+}
+
+.listagem{
+    width: 100%;
+    border-collapse: collapse;
+}
+.listagem td, .listagem th{
+    border: 1px solid #ddd;
+    padding: 5px;
+    text-align: center;
+}
+.listagem th{
+    background-color: green;
+    color:white;
+}
+.listagem tr:hover{
+    background-color: #ddd;
+}

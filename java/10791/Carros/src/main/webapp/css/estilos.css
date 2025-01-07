@@ -1,0 +1,64 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f0f0f0;
+}
+
+#containerImagem {
+    width: 150px;
+    height: 150px;
+    border: 1px solid black;
+    margin: 10px auto;
+}
+
+.carro-imagem {
+    width: 150px;
+    height: 150px;
+}
+
+.dropdown {
+    margin: 10px 0;
+}
+
+.dropdown select {
+    width: 200px;
+    padding: 5px;
+}
+
+.inputUser {
+    margin: 10px 0;
+}
+
+.inputUser input {
+    width: 200px;
+    padding: 5px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+
+.botoes {
+    margin: 20px 0;
+}
+
+
+.btn {
+    padding: 5px 15px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.detalhes {
+    width: 300px;
+    margin: 20px auto;
+    text-align: center;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.detalhes p {
+    margin: 10px 0;
+}

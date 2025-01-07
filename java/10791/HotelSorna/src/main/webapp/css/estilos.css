@@ -1,0 +1,86 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f0f0f0;
+}
+
+.header {
+    max-width: 500px;
+    margin: 20px 0;
+    display: block;
+}
+
+.calendario, .dropdown {
+    margin: 20px;
+    padding: 15px;
+}
+
+.data, .quarto, .contacto {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.introContacto {
+    width: 200px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.selecQuarto {
+    width: 200px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.selecQuarto:focus {
+    outline: none;
+    border-color: #4CAF50;
+}
+
+.selecQuarto option {
+    padding: 8px;
+    font-size: 16px;
+}
+
+.selecData {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.botoes {
+    margin: 20px 0;
+}
+
+
+.btn {
+    padding: 5px 15px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.detalhes {
+    width: 300px;
+    margin: 20px auto;
+    text-align: center;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.detalhes p {
+    margin: 10px 0;
+}
+
+.imagemQuarto {
+    width: 300px;
+    height: 300px;
+    margin: 20px 0;
+    border-radius: 4px;
+}

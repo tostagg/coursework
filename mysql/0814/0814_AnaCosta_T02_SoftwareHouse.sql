@@ -4,37 +4,37 @@ use bdprojetos;
 
 -- 2) criação das tabelas e respetivos campos
 create table projetos (
-		p		int auto_increment,
+	p		int auto_increment,
         df		date not null,
-		primary key (p)
+	primary key (p)
 );
 
 create table cargos (
-		c 		varchar(2) not null,
-        cargo	varchar(20) not null,
+	c 		varchar(2) not null,
+        cargo		varchar(20) not null,
         primary key (c)
 );
 
 create table funcionarios (
-		f		int,
-        nome	varchar(50) not null,
-		c		varchar(2) not null,
+	f		int,
+        nome		varchar(50) not null,
+	c		varchar(2) not null,
         primary key (c),
         foreign key (c)
-				references cargos(c)
-				on update cascade
+			references cargos(c)
+			on update cascade
 );
 
 create table envolvidos (
-		p		int not null,
+	p		int not null,
         f 		int not null,
         primary key (p, f),
         foreign key (p)
-				references projetos (p)
-                on update cascade,
-		foreign key (f)
-				references funcionarios (f)
-				on update cascade
+			references projetos (p)
+               		on update cascade,
+	foreign key (f)
+			references funcionarios (f)
+			on update cascade
 );
 
 -- 3) introduzir dados nas tabelas criadas
@@ -49,20 +49,20 @@ insert into projetos (df)
         
 insert into cargos (c, cargo)
 	values
-		('PR', 'Programador'), 
+	('PR', 'Programador'), 
         ('AL', 'Analista'), 
         ('WD', 'Web Designer');
         
 insert into funcionarios
 	values
-		('3', 'Ana Pinto', 'PR'), 
+	('3', 'Ana Pinto', 'PR'), 
         ('1', 'Rui Antunes', 'PR'), 
         ('2', 'Miguel Ferreira', 'AL'), 
         ('12', 'Sónia Oliveira', 'WD');
         
 insert into envolvidos (p, f)
 	values
-		('1', '3'), 
+	('1', '3'), 
         ('1', '1'), 
         ('1', '2'), 
         ('2', '1'), 
@@ -136,75 +136,75 @@ group by cargos.cargo;
 -- 5. d)  atualizar tabela projetos
 update projetos 
 	set 
-		descricao = 'Site CMS',
-		di = '2015-09-01'
-			where
-				p = 1;
+	descricao = 'Site CMS',
+	di = '2015-09-01'
+		where
+		p = 1;
 
 update projetos 
 	set 
-		descricao = 'Sistema de Cobrança',
-		di = '2015-11-20'
-			where
-				p = 2;
+	descricao = 'Sistema de Cobrança',
+	di = '2015-11-20'
+		where
+		p = 2;
 
 update projetos 
 	set 
-		descricao = 'Controlo de Assiduidade',
-		di = '2015-11-14'
-			where
-				p = 3;
+	descricao = 'Controlo de Assiduidade',
+	di = '2015-11-14'
+		where
+		p = 3;
 
 update projetos 
 	set 
-		descricao = 'Site CML',
-		di = '2015-12-12'
-			where
-				p = 4;
+	descricao = 'Site CML',
+	di = '2015-12-12'
+		where
+		p = 4;
 
 update projetos 
 	set 
-		descricao = 'Licenciamento',
-		di = '2016-01-03'
-			where
-				p = 5;
+	descricao = 'Licenciamento',
+	di = '2016-01-03'
+		where
+		p = 5;
 
 -- 5. e) atualizar tabela funcionários
 update funcionarios 
 	set 
-		preco_dia = '52.5'
-			where
-				f = 3;
+	preco_dia = '52.5'
+		where
+		f = 3;
 
 update funcionarios 
 	set 
-		preco_dia = '50'
-			where
-				f = 1;
+	preco_dia = '50'
+		where
+		f = 1;
    
 update funcionarios 
 	set 
-		preco_dia = '75'
-			where
-				f = 2;
+	preco_dia = '75'
+		where
+		f = 2;
     
 update funcionarios 
 	set 
-		preco_dia = '45'
-			where
-				f = 12;
+	preco_dia = '45'
+		where
+		f = 12;
 
 -- 5. f) calcular montante gasto em cada cada projeto
 select
 	projetos.p,
-    descricao,
-    di,
-    df,
-    datediff(df, di) as total_dias,
-    sum(funcionarios.preco_dia * datediff(df,di)) as total_gasto
+	descricao,
+	di,
+	df,
+	datediff(df, di) as total_dias,
+	sum(funcionarios.preco_dia * datediff(df,di)) as total_gasto
 from
-	projetos
-		join envolvidos on projetos.p = envolvidos.p
-        join funcionarios on envolvidos.f = funcionarios.f
+projetos
+	join envolvidos on projetos.p = envolvidos.p
+       	join funcionarios on envolvidos.f = funcionarios.f
 group by
 	projetos.p;

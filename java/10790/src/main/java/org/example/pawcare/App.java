@@ -1,4 +1,3 @@
-// App.java
 package org.example.pawcare;
 
 import javax.swing.SwingUtilities;
